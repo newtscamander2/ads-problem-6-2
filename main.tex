@@ -117,6 +117,12 @@ $$h = \log_d{n}$$
 	\end{minipage}
 \end{center}
 
+Extract-Max does a constant amount of work on-top of Max-Heapify.
+We therefore have to find the running-time of Max-Heapify to find the running-time of our program.
+Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $d$ children for all nodes under the highest node.
+You can find the height of the heap using $log_d{n}$.
+The running-time for our implementation is therefore
+$$3 \cdot log_d{n} = O(log_d{n})$$
 
 \section*{d}
 
