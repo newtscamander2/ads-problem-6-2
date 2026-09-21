@@ -131,6 +131,7 @@ $$3 \cdot log_d{n} = O(log_d{n})$$
 			\Procedure{MAX-HEAP-INCREASE-KEY}{$A, x, k$}
 			\If{$k < x.key$}
 			\State{$\text{\textbf{error} "new key is smaller than current key"}$}
+			\State{$x.key = k$}
 
 			\EndIf{}
 
