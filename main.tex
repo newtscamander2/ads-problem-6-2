@@ -142,5 +142,24 @@ $$3 \cdot log_d{n} = O(log_d{n})$$
 
 
 \section*{e}
+\begin{center}
+	\begin{minipage}{12cm}
+		\begin{algorithmic}
+			\Procedure{MAX-HEAP-INSERT}{$A, x, k$}
+			\If{$A.heap-size == n$}
+			\State{$\text{\textbf{error} "Heap overflow"}$}
+			\EndIf{} 
+
+			\State{$A.heap-size = A.heap-size + 1$}
+			\State{$k = x.key$}
+			\State{$x.key = –\infty$}
+			\State{$A[A.heap-size] = x$}
+			\State{$map x to index heap-size in the array$}
+
+			\EndProcedure{}
+		\end{algorithmic}
+	\end{minipage}
+\end{center}
+
 
 \end{document}
