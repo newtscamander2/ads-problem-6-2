@@ -124,7 +124,13 @@ You can find the height of the heap using $log_d{n}$.
 The running-time for our implementation is therefore
 $$3 \cdot log_d{(n)} = O(log_d{(n)})$$
 
+
+
+
 \section*{d}
+Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$.
+
+
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
@@ -132,13 +138,18 @@ $$3 \cdot log_d{(n)} = O(log_d{(n)})$$
 			\If{$k < x.key$}
 			\State{$\text{\textbf{error} "new key is smaller than current key"}$}
 			\State{$x.key = k$}
-
 			\EndIf{}
+			\While{$ i > 1$ and $ A[PARENT(i).key < A[i].key$}
+			\State{exchange $A[i]$ with $A[PARENT(i)]$}
+			\State{$i = PARENT(i)$}
+			\EndWhile{}
 
 			\EndProcedure{}
 		\end{algorithmic}
 	\end{minipage}
 \end{center}
+
+
 
 
 
@@ -149,7 +160,7 @@ $$3 \cdot log_d{(n)} = O(log_d{(n)})$$
 			\Procedure{MAX-HEAP-INSERT}{$A, x, k$}
 			\If{$A.heap-size == n$}
 			\State{$\text{\textbf{error} "Heap overflow"}$}
-			\EndIf{} 
+			\EndIf{}
 
 			\State{$A.heap-size = A.heap-size + 1$}
 			\State{$k = x.key$}
