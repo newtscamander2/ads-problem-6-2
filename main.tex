@@ -122,7 +122,7 @@ We therefore have to find the running-time of Max-Heapify to find the running-ti
 Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $d$ children for all nodes under the highest node.
 You can find the height of the heap using $log_d{n}$.
 The running-time for our implementation is therefore
-$$3 \cdot log_d{n} = O(log_d{n})$$
+$$3 \cdot log_d{(n)} = O(log_d{(n)})$$
 
 \section*{d}
 \begin{center}
@@ -131,6 +131,7 @@ $$3 \cdot log_d{n} = O(log_d{n})$$
 			\Procedure{MAX-HEAP-INCREASE-KEY}{$A, x, k$}
 			\If{$k < x.key$}
 			\State{$\text{\textbf{error} "new key is smaller than current key"}$}
+			\State{$x.key = k$}
 
 			\EndIf{}
 
