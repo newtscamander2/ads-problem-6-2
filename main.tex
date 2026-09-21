@@ -77,8 +77,8 @@ $$h = \log_d{n}$$
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
       \Procedure{Max-Heap-Maximum}{$A$}
-      \If{$A.heap-size < 1$}
-      \State{$eer$}
+      \If{$\text{A.heap-size} < 1$}
+      \State{$\text{\textbf{error} bla bla bla}$}
 
       \EndIf
 
@@ -109,7 +109,7 @@ $$h = \log_d{n}$$
       \\
       \Procedure{Extract-max}{$A$}
       \State{$max = \text{Max-Heap-Maximum}(A)$}
-      \State{$A[1] = A[A.heap-size]$}
+      \State{$A[1] = A[\text{A.heap-size}]$}
       \State{$\text{Max-heapify}(A, 1)$}
       \State{\Return{$max$}}
       \EndProcedure
