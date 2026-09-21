@@ -73,6 +73,7 @@ $$i \cdot d + 1$$
 \section*{c}
 %Insert pseudo code here
 
+%Max-heap-maximum
 Max-Heap-Maximum(A)
 
 if A.heap-size < 1
@@ -81,11 +82,25 @@ error
 
 return A[1]
 
+%Max heapify
 Max-heapify(A, i)
 
+for x =  0 to d-1
+
+index = i + i * d + x
+
+if index <= A.heap-size and A[index] > A[i]
+
+largest = index
+
+else largest = i
 
 
+if largest != i
+Exchange A[i] with A[largest]
+Max-heapify(A, largest)
 
+%Extract max
 Extract-max(A)
 
 max = Max-Heap-Maximum(A)
