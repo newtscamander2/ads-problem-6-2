@@ -87,30 +87,30 @@ $$h = \log_d{n}$$
 
       \\
       \\
-      \Procedure{Max-heapify}{$A, i$}
+      \Procedure{Max-Heapify}{$A, i$}
 
       \State{$largest = i$}
 
       \For{$x = 0 \rightarrow d-1$}
       \State{$index = i+i\cdot d + x$}
-      \If{$index \leq A.heap-size \text{ and } A[index] > A[largest]$}
+      \If{$index \leq \text{A.heap-size} \text{ and } A[index] > A[largest]$}
       \State{$largest = index$}
       \EndIf
       \EndFor
 
       \If{$largest \neq i$}
       \State{$\text{Exchange }A[i] \text{ with } A[largest]$}
-      \State{$\text{Max-heapify}(A, largest)$}
+      \State{$\text{Max-Heapify}(A, largest)$}
       \EndIf
 
       \EndProcedure
 
       \\
       \\
-      \Procedure{Extract-max}{$A$}
+      \Procedure{Extract-Max}{$A$}
       \State{$max = \text{Max-Heap-Maximum}(A)$}
       \State{$A[1] = A[\text{A.heap-size}]$}
-      \State{$\text{Max-heapify}(A, 1)$}
+      \State{$\text{Max-Heapify}(A, 1)$}
       \State{\Return{$max$}}
       \EndProcedure
 		\end{algorithmic}
