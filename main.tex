@@ -5,6 +5,7 @@
 \usepackage[english]{babel}
 \usepackage[noend]{algpseudocode}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{lineno}
@@ -72,73 +73,45 @@ To find the height of a d'ary heap in terms of $n$ and $d$ where $n$ is the numb
 $$h = \log_d{n}$$
 
 \section*{c}
-%Insert pseudo code here
 \begin{center}
-	\begin{minipage}{8.8cm}
+	\begin{minipage}{12cm}
 		\begin{algorithmic}
-			\Procedure{Search}{$A, y$}
+      \Procedure{Max-Heap-Maximum}{$A$}
+      \If{$A.heap-size < 1$}
+      \State{$eer$}
 
-			\Comment{test}
-			\State{$i = 1$}
-			\While{$A[i] < y$}
-			\EndWhile{}
+      \EndIf
 
+      \State{\Return{$A[1]$}}
 			\EndProcedure
+
+      \Procedure{Max-heapify}{$A, i$}
+
+      \State{$largest = i$}
+
+      \For{$x = 0 \rightarrow d-1$}
+      \State{$index = i+i\cdot d + x$}
+      \If{$index \leq A.heap-size \text{ and } A[index] > A[largest]$}
+      \State{$largest = index$}
+      \EndIf
+      \EndFor
+
+      \If{$largest \neq i$}
+      \State{$\text{Exchange }A[i] \text{ with } A[largest]$}
+      \State{$\text{Max-heapify}(A, largest)$}
+      \EndIf
+
+      \EndProcedure
+
+      \Procedure{Extract-max}{$A$}
+      \State{$max = \text{Max-Heap-Maximum}(A)$}
+      \State{$A[1] = A[A.heap-size]$}
+      \State{$\text{Max-heapify}(A, 1)$}
+      \State{\Return{$max$}}
+      \EndProcedure
 		\end{algorithmic}
 	\end{minipage}
 \end{center}
-
-
-
-
-
-
-%Max-heap-maximum
-\begin{center}
-	\begin{minipage}{8.8cm}
-		\begin{algorithmic}
-      \Procedure{Search}{$A, y$}
-Max-Heap-Maximum(A)
-
-if A.heap-size < 1
-
-error
-
-return A[1]
-			\EndProcedure
-		\end{algorithmic}
-	\end{minipage}
-\end{center}
-
-
-%Max heapify
-Max-heapify(A, i)
-
-for x =  0 to d-1
-
-index = i + i * d + x
-
-if index <= A.heap-size and A[index] > A[i]
-
-largest = index
-
-else largest = i
-
-
-if largest != i
-Exchange A[i] with A[largest]
-Max-heapify(A, largest)
-
-%Extract max
-Extract-max(A)
-
-max = Max-Heap-Maximum(A)
-
-A[1] = A[a.heap-size]
-
-Max-heapify(A, 1)
-
-return max
 
 
 \section*{d}
