@@ -62,17 +62,22 @@
 
 \section*{Our solution}
 
-\section*{a}
+\section*{a)}
 A d'ary array can be represented using its children. For the left child of a given node, the index of the child is $d \cdot i$, and for the right child, the index is one larger than the left child, meaning $d \cdot i + 1$.
 
 $$i \cdot d$$
 $$i \cdot d + 1$$
 
-\section*{b}
+You can then find all the children of a node as
+$$\sum_{n=0}^{d-1}i\cdot d + n$$
+An example could be $d=5$. Then the children would be
+$$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
+
+\section*{b)}
 To find the height of a d'ary heap in terms of $n$ and $d$ where $n$ is the number of elements in the sequence and $d$ is the maximum amount of children, we can use logarithm
 $$h = \log_d{n}$$
 
-\section*{c}
+\section*{c)}
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
@@ -127,7 +132,7 @@ $$3 \cdot log_d{(n)} = O(log_d{(n)})$$
 
 
 
-\section*{d}
+\section*{d)}
 Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$.
 
 
@@ -154,7 +159,7 @@ Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$.
 
 
 
-\section*{e}
+\section*{e)}
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
