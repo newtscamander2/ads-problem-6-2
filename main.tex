@@ -74,6 +74,8 @@ An example could be $d=5$. Then the children would be
 $$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
 
 \section*{b)}
+
+
 To find the height of a d'ary heap in terms of $n$ and $d$ where $n$ is the number of elements in the sequence and $d$ is the maximum amount of children, we can use logarithm
 $$h = \log_d{n}$$
 
@@ -126,10 +128,13 @@ Extract-Max does a constant amount of work on-top of Max-Heapify.
 We therefore have to find the running-time of Max-Heapify to find the running-time of our program.
 Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $d$ children for all nodes under the highest node.
 You can find the height of the heap using $log_d{n}$.
-The running-time for our implementation is therefore
-$$3 \cdot log_d{(n)} = O(log_d{(n)})$$
-
-
+The running-time for our implementation is therefore the running time
+$$d \cdot log_d{(n)}$$
+$d$ is a constant and we can therefore write it in Big-O notation as.
+$$O(log_d{(n)})$$
+From the supplementary notes math cheatsheet we know that $log_b{(a)} = \frac{log_c{(a)}}{log_c{(b)}}$.
+We can therefore simplify our running time for Max-heapify for $a$ d-ary heap to.
+$$O(\frac{log{(n)}}{log{(d)})})$$
 
 
 \section*{d)}
