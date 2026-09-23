@@ -82,6 +82,14 @@ $$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
 To count a d-ary trees height you find the amount of nodes to the lowest leaf. The trees are created from left to right, and is therefore always complete (there are no holes in a tree / no incomplete branches).
 The count of elements in a d-ary heap can be found using $n=1 + d + d^2 + d^3 + d^4 + \cdots + d^h=\sum_{i=0}^{h}d^i = \frac{d^{h+1}-1}{d-1}$.
 
+Since we want to find the height $h$ we have to solve for $h$
+$$n = \frac{d^{h+1}-1}{d-1} \iff log_d{(n)}=log_d{(\frac{d^{h+1}-1}{d-1})} = log_d{(d^{h+1}-1)}-log_d{(d-1)}$$
+$$\Updownarrow$$
+$$\lfloor log_d{(n)} \rfloor = \lfloor log_d{(d^{h+1}-1)} - log_d{(d-1)} \rfloor = \lfloor log_d{(d^{h+1})}-1 \rfloor$$
+$$\Updownarrow$$
+$$\lfloor log_d{(n)} + 1\rfloor = \lfloor h+1 \rfloor$$
+$$\Updownarrow$$
+$$\lfloor log_d{(n)}\rfloor = \lfloor h \rfloor$$
 
 \section*{c)}
 \begin{center}
