@@ -137,8 +137,9 @@ Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$.
 			\Procedure{Max-Heap-Increase-Key}{$A, x, k$}
 			\If{$k < x.key$}
 			\State{$\text{\textbf{error} "new key is smaller than current key"}$}
-			\State{$x.key = k$}
 			\EndIf{}
+			\State{$x.key = k$}
+
 			\While{$ i > 1$ and $ A[PARENT(i).key < A[i].key$}
 			\State{exchange $A[i]$ with $A[PARENT(i)]$}
 			\State{$i = PARENT(i)$}
