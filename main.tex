@@ -154,7 +154,7 @@ Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$ because it first 
 			\EndIf{}
 			\State{$x.key = k$}
 
-			\While{$ i > 1$ and $ A[PARENT(i).key < A[i].key$}
+			\While{$ i > 1$ and $ A[PARENT(i)].key < A[i].key$}
 			\State{exchange $A[i]$ with $A[PARENT(i)]$}
 			\State{$i = PARENT(i)$}
 			\EndWhile{}
