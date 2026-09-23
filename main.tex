@@ -142,7 +142,7 @@ $$O(\frac{log{(n)}}{log{(d)})})$$
 
 
 \section*{d)}
-Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property.
+Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. In the while loop it traverses up the heap, doing a constant amount of work. The heap has the height $h = \log_d{n}$, thus the running time becomes $\theta(\log_d{n})$.
 
 
 \begin{center}
