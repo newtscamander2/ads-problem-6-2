@@ -62,16 +62,19 @@
 
 \section*{Our solution}
 
-\section*{a)}
-A d'ary array can be represented using its children. For the left child of a given node, the index of the child is $d \cdot i$, and for the right child, the index is one larger than the left child, meaning $d \cdot i + 1$.
 
-$$i \cdot d$$
-$$i \cdot d + 1$$
+\section*{a}
+A d'ary heap can both be represented in the form of a tree structure and in the form of an array. When making an array of numbers in a d'ary heap data structure it is important to denote the index of each node. For a d'ary heap we have that a node has (up to) $d$ children, except at the end of the heap.
+
+To find the index of a node as the k'th child of a parent node, where k is 0-indexed, we can use the following formula:
+$$i_{child} = i_{parent} \cdot d + k_{child}$$
 
 You can then find all the children of a node as
-$$\sum_{n=0}^{d-1}i\cdot d + n$$
+$$\sum_{k=0}^{d-1}i\cdot d + k$$
+
 An example could be $d=5$. Then the children would be
 $$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
+
 
 \section*{b)}
 
