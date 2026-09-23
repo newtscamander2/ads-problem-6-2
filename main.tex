@@ -164,11 +164,14 @@ Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$.
 
 
 
-\section*{e)}
+\section*{e}
+Running time book: "O(lg n) plus the overhead for mapping priority queue
+objects to indices."
+
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
-			\Procedure{MAX-HEAP-INSERT}{$A, x, k$}
+			\Procedure{Max-Heap-Insert}{$A, x, k$}
 			\If{$A.heap-size == n$}
 			\State{$\text{\textbf{error} "Heap overflow"}$}
 			\EndIf{}
