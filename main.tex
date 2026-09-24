@@ -82,14 +82,34 @@ $$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
 To count a d-ary trees height you find the amount of nodes to the lowest leaf. The trees are created from left to right, and is therefore always complete (there are no holes in a tree / no incomplete branches).
 The count of elements in a d-ary heap can be found using $n=1 + d + d^2 + d^3 + d^4 + \cdots + d^h=\sum_{i=0}^{h}d^i = \frac{d^{h+1}-1}{d-1}$.
 
-Since we want to find the height $h$ we have to solve for $h$
-$$n = \frac{d^{h+1}-1}{d-1}$$
+Since we want to find the height $h$ we have to solve for $h$.
+We can find $n$ amount of elements in a filled heap with the equation $n = \frac{d^{h+1}-1}{d-1}$. $n$ is therefore.
+
+$$n \leq \frac{d^{h+1}-1}{d-1}$$
+We can then find a lowerbound for when a heap has a step with only $1$ element.
+$$n \geq \frac{d^{h}-1}{d-1} + 1$$
+
+We can now write the inequality
+$$\frac{d^{h}-1}{d-1} + 1 \leq n \leq \frac{d^{h+1}-1}{d-1}$$
+$$\Downarrow$$
+$$\frac{d^{h}-1}{d-1} < n \leq \frac{d^{h+1}-1}{d-1}$$
 $$\Updownarrow$$
-$$log_d{(n)}=log_d{(\frac{d^{h+1}-1}{d-1})} = log_d{(d^{h+1}-1)}-log_d{(d-1)}$$
+$$d^{h}-1 < n(d-1) \leq d^{h+1}-1$$
 $$\Updownarrow$$
-$$\lfloor log_d{(n)} \rfloor = \lfloor log_d{(d^{h+1}-1)} - log_d{(d-1)} \rfloor = log_d{(d^{h})}-0$$
+$$d^{h} < n(d-1)+1 \leq d^{h+1}$$
 $$\Updownarrow$$
-$$\lfloor log_d{(n)}\rfloor = h$$
+$$log_d{(d^{h})} < log_d{(n(d-1)+1)} \leq log_d{(d^{h+1})}$$
+$$\Updownarrow$$
+$$h < log_d{(n(d-1)+1)} \leq h+1$$
+$$\Downarrow$$
+$$h < \lceil log_d{(n(d-1)+1)} \rceil = h+1$$
+$$\Updownarrow$$
+$$h = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
+
+
+%Theta notaion!!!!????
+From \textbf{Theorem 3.1} we know that if $f(n) = \Omega{(g(n))}$ and $f(n) = O{(g(n))}$ then $f(n) = \Theta{(g(n))}$
+
 
 \section*{c)}
 \begin{center}
