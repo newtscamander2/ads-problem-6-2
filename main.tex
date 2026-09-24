@@ -173,7 +173,7 @@ To make it a Max-heap we run Max-Heapify on the heap to move the moved element d
 
 Extract-Max does a constant amount of work on-top of Max-Heapify.
 We therefore have to find the running-time of Max-Heapify to find the running-time of our program.
-Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $\Theta(d)$ children for all nodes under the highest node.
+Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $\Theta(d)$ for the children at each level.
 We know that the height of the heap is given by $\Theta{(log_d{(n)})}$
 The running-time for our implementation is therefore the running time
 $$\Theta(d) \cdot \Theta{(log_d{(n)})} = \Theta{(d\cdot log_d{(n)})}$$
