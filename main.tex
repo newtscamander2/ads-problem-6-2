@@ -183,8 +183,7 @@ $$\Theta(\frac{d\cdot log{(n)}}{log{(d)})})$$
 
 
 \section*{d)}
-Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. In the while loop it traverses up the heap, doing a constant amount of work. The heap has the height $h = \log_d{n}$, thus the running time becomes $\theta(\log_d{n})$.
-
+Max-Heap-Increase-Key takes a value at a given index, and moves it up the heap, until it is at a location that fuffills a max d-ary heap.
 
 \begin{center}
 	\begin{minipage}{12cm}
@@ -205,7 +204,9 @@ Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first 
 	\end{minipage}
 \end{center}
 
-
+Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. 
+In the while loop it traverses up the heap, doing a constant amount of work. 
+The heap has the height $\Theta{(\log_d{n})}$, thus the running time for Max-Heap-Increase-Key becomes $\Theta(\log_d{n})$.
 
 
 
