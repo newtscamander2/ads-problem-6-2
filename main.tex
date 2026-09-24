@@ -107,7 +107,16 @@ $$\Updownarrow$$
 $$h = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 
 %Theta notaion!!!!????
+Because $n$ is the dominant term in $\lceil log_d{(n(d-1)+1)} \rceil - 1$ because $d$ and $1$ is a constant factor we can find a $c$ such that
+$$log_d{(n_0)}\cdot c \geq \lceil log_d{(n_0(d-1)+1)} \rceil - 1$$
+
+It is therefore true that 
 $$O(log_d{(n)}) = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
+
+As with Big-O notation $n$ is a dominant factor. We can therefore find a $c$ such that it is true that
+$$log_d{(n_0)}\cdot c \leq \lceil log_d{(n_0(d-1)+1)} \rceil - 1$$
+
+It is therefore true that
 $$\Omega(log_d{(n)}) = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 
 From \textbf{Theorem 3.1} we know that if $f(n) = \Omega{(g(n))}$ and $f(n) = O{(g(n))}$ then $f(n) = \Theta{(g(n))}$
@@ -160,19 +169,17 @@ $$\Theta(log_d{(n)}) = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 
 Extract-Max does a constant amount of work on-top of Max-Heapify.
 We therefore have to find the running-time of Max-Heapify to find the running-time of our program.
-Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $d$ children for all nodes under the highest node.
-You can find the height of the heap using $log_d{n}$.
+Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $\Theta(d)$ children for all nodes under the highest node.
+We know that the height of the heap is given by $\Theta{(log_d{(n)})}$
 The running-time for our implementation is therefore the running time
-$$d \cdot log_d{(n)}$$
-$d$ is a constant and we can therefore write it in Big-O notation as.
-$$O(log_d{(n)})$$
+$$\Theta(d) \cdot \Theta{(log_d{(n)})} = \Theta{(d\cdot log_d{(n)})}$$
 From the supplementary notes math cheatsheet we know that $log_b{(a)} = \frac{log_c{(a)}}{log_c{(b)}}$.
 We can therefore simplify our running time for Max-heapify for $a$ d-ary heap to.
-$$O(\frac{log{(n)}}{log{(d)})})$$
+$$\Theta(\frac{d\cdot log{(n)}}{log{(d)})})$$
 
 
 \section*{d)}
-Max-Heap-Increase-Key has the running time $\theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. In the while loop it traverses up the heap, doing a constant amount of work. The heap has the height $h = \log_d{n}$, thus the running time becomes $\theta(\log_d{n})$.
+Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. In the while loop it traverses up the heap, doing a constant amount of work. The heap has the height $h = \log_d{n}$, thus the running time becomes $\theta(\log_d{n})$.
 
 
 \begin{center}
