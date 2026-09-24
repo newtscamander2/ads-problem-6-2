@@ -110,7 +110,7 @@ $$h = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 Because $n$ is the dominant term in $\lceil log_d{(n(d-1)+1)} \rceil - 1$ because $d$ and $1$ is a constant factor we can find a $c$ such that
 $$log_d{(n_0)}\cdot c \geq \lceil log_d{(n_0(d-1)+1)} \rceil - 1$$
 
-It is therefore true that 
+It is therefore true that
 $$O(log_d{(n)}) = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 
 As with Big-O notation $n$ is a dominant factor. We can therefore find a $c$ such that it is true that
@@ -211,20 +211,17 @@ The heap has the height $\Theta{(\log_d{n})}$, thus the running time for Max-Hea
 
 
 \section*{e}
-Max-Heap-Insert is a function that can insert an element into the heap as the last element and then restore heap property.
-
-Running time book: "O(lg n) plus the overhead for mapping priority queue
-objects to indices."
+Max-Heap-Insert is a function that can insert an element into the heap as the last element and then restore heap property. Max-heap-insert first checks if there is room for the new element, then it makes the heap larger by expanding the heap by adding another leaf to the heap with the new element that is $-\infty$. Then it calls Max-Heap-Increase-Key to restore heap property.
 
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
 			\Procedure{Max-Heap-Insert}{$A, x, k$}
-			\If{$A.heap-size == n$}
+			\If{A.heap-size $ == n$}
 			\State{$\text{\textbf{error} "Heap overflow"}$}
 			\EndIf{}
 
-			\State{$A.heap-size = $ A.heap-size $ + 1$}
+			\State{A.heap-size$ = $ A.heap-size $ + 1$}
 			\State{$k = x.key$}
 			\State{$x.key = –\infty$}
 			\State{$A[$A.heap-size$] = x$}
@@ -236,5 +233,6 @@ objects to indices."
 	\end{minipage}
 \end{center}
 
+The running time of Max-Heap-Insert thus is the same as Max-Heap-Increase-Key plus a tiny overhead that is a constant and therefore irelevant. Therefore, the running time for Max-Heap-Insert is $\Theta(\log_d{n})$.
 
 \end{document}
