@@ -210,7 +210,7 @@ Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first 
 
 
 \section*{e}
-
+Max-Heap-Insert is a function that can insert an element into the heap as the last element and then restore heap property.
 
 Running time book: "O(lg n) plus the overhead for mapping priority queue
 objects to indices."
@@ -223,11 +223,12 @@ objects to indices."
 			\State{$\text{\textbf{error} "Heap overflow"}$}
 			\EndIf{}
 
-			\State{$A.heap-size = A.heap-size + 1$}
+			\State{$A.heap-size = $ A.heap-size $ + 1$}
 			\State{$k = x.key$}
 			\State{$x.key = –\infty$}
-			\State{$A[A.heap-size] = x$}
-			\State{map $x$ to index $heap-size$ in the array}
+			\State{$A[$A.heap-size$] = x$}
+			\State{map $x$ to index heap-size in the array}
+			\State{Max-Heap-Increase-Key(A, x, k)}
 
 			\EndProcedure{}
 		\end{algorithmic}
