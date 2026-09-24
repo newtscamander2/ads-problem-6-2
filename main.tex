@@ -201,8 +201,8 @@ Max-Heap-Increase-Key takes a value at a given index, and moves it up the heap, 
 	\end{minipage}
 \end{center}
 
-Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property. 
-In the while loop it traverses up the heap, doing a constant amount of work. 
+Max-Heap-Increase-Key has the running time $\Theta(\log_d{n})$ because it first updates a node's value to a larger key and then restores the heap property.
+In the while loop it traverses up the heap, doing a constant amount of work.
 The heap has the height $\Theta{(\log_d{n})}$, thus the running time for Max-Heap-Increase-Key becomes $\Theta(\log_d{n})$.
 
 
@@ -220,7 +220,7 @@ Max-Heap-Insert is a function that can insert an element into the heap as the la
 
 			\State{A.heap-size$ = $ A.heap-size $ + 1$}
 			\State{$k = x.key$}
-			\State{$x.key = –\infty$}
+			\State{$x.key = -\infty$}
 			\State{$A[$A.heap-size$] = x$}
 			\State{map $x$ to index heap-size in the array}
 			\State{Max-Heap-Increase-Key(A, x, k)}
@@ -230,6 +230,7 @@ Max-Heap-Insert is a function that can insert an element into the heap as the la
 	\end{minipage}
 \end{center}
 
-The running time of Max-Heap-Insert thus is the same as Max-Heap-Increase-Key plus a tiny overhead that is a constant and therefore irelevant. Therefore, the running time for Max-Heap-Insert is $\Theta(\log_d{n})$.
+The running time of Max-Heap-Insert thus is the same as Max-Heap-Increase-Key plus a tiny overhead that is a constant and therefore irelevant.
+Therefore, the running time for Max-Heap-Insert is $\Theta(\log_d{n})$.
 
 \end{document}
