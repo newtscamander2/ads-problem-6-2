@@ -123,6 +123,10 @@ From \textbf{Theorem 3.1} we know that if $f(n) = \Omega{(g(n))}$ and $f(n) = O{
 $$\Theta(log_d{(n)}) = \lceil log_d{(n(d-1)+1)} \rceil - 1$$
 
 \section*{c)}
+The Extract-Max function on a max d-ary heap extracts the largets value in the heap. I a max d-ary heap that value sits at the root (or the first element stored in the array).
+We can therefore remove the first element in the array, and then move the last element in the array which is smaller than the root.
+To make it a Max-heap we run Max-Heapify on the heap to move the moved element down the heap to it's correct position.
+
 \begin{center}
 	\begin{minipage}{12cm}
 		\begin{algorithmic}
