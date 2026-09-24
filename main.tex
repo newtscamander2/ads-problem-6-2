@@ -43,7 +43,7 @@
 
 	a. Describe how to represent a d-ary heap in an array.
 
-	b. Using $\theta$-notation, express the height of a d-ary heap of n elements in
+	b. Using $\Theta$-notation, express the height of a d-ary heap of n elements in
 	terms of n and d.
 
 	c. Give an efficient implementation of EXTRACT-MAX in a d-ary
@@ -63,7 +63,7 @@
 \section*{Our solution}
 
 
-\section*{a}
+\section*{a)}
 A d'ary heap can both be represented in the form of a tree structure and in the form of an array. When making an array of numbers in a d'ary heap data structure it is important to denote the index of each node. For a d'ary heap we have that a node has (up to) $d$ children, except at the end of the heap.
 
 To find the index of a node as the k'th child of a parent node, where k is 0-indexed, we can use the following formula:
@@ -177,9 +177,6 @@ Max-heapify contains a loop from $0 \rightarrow d-1$ so it runs for $\Theta(d)$ 
 We know that the height of the heap is given by $\Theta{(log_d{(n)})}$
 The running-time for our implementation is therefore the running time
 $$\Theta(d) \cdot \Theta{(log_d{(n)})} = \Theta{(d\cdot log_d{(n)})}$$
-From the supplementary notes math cheatsheet we know that $log_b{(a)} = \frac{log_c{(a)}}{log_c{(b)}}$.
-We can therefore simplify our running time for Max-heapify for $a$ d-ary heap to.
-$$\Theta(\frac{d\cdot log{(n)}}{log{(d)})})$$
 
 
 \section*{d)}
