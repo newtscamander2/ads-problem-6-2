@@ -72,7 +72,7 @@ $$i_{child} = i_{parent} \cdot d + k_{child}$$
 If A in a d'ary heap we furhtermore have that $A[i_{parent}] > A[i_{child}]$ for a max-heap and $A[i_{parent}] < A[i_{child}]$ for a min-heap.
 
 You can then find all the children of a node as
-$$\sum_{k=0}^{d-1}i\cdot d + k$$
+$$\sum_{k=1}^{d}i\cdot d + k$$
 
 An example could be $d=5$. Then the children would be
 $$i \cdot5, i \cdot 5 + 1, i \cdot 5 + 2, i \cdot 5 + 3, i \cdot 5 + 4$$
